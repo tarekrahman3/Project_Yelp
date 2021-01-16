@@ -9,7 +9,7 @@ options.add_argument("--no-sandbox")
 options.add_experimental_option("useAutomationExtension", False)
 options.add_experimental_option("excludeSwitches",["enable-automation"])
 options.add_argument("--start-maximized")
-
+options.add_argument('--ignore-certificate-errors')
 col1 =[]
 col2 =[]
 col3 =[]
@@ -21,26 +21,50 @@ col8 =[]
 col9 =[]
 
 companys = (
-'https://www.yelp.com/biz/pet-palace-cary-cary?osq=Pet+Boarding',
-'https://www.yelp.com/biz/dogevolve-durham-2?osq=Pet+Boarding',
-'https://www.yelp.com/biz/walk-and-wag-chapel-hill?osq=Pet+Boarding',
-'https://www.yelp.com/biz/pure-love-pet-sitting-cary?osq=Pet+Boarding',
-'https://www.yelp.com/biz/chapel-hill-pet-resort-chapel-hill?osq=Pet+Boarding',
-'https://www.yelp.com/biz/cats-at-home-chapel-hill?osq=Pet+Boarding',
-'https://www.yelp.com/biz/petsound-daycare-and-boarding-cary?osq=Pet+Boarding',
-'https://www.yelp.com/biz/laughing-dog-pet-care-carrboro?osq=Pet+Boarding',
-'https://www.yelp.com/biz/brier-creek-pet-hotel-morrisville?osq=Pet+Boarding',
-'https://www.yelp.com/biz/cozy-cats-hotel-cary?osq=Pet+Boarding',
-'https://www.yelp.com/biz/north-paw-animal-hospital-durham?osq=Pet+Boarding',
-'https://www.yelp.com/biz/meowinn-morrisville?osq=Pet+Boarding',
-'https://www.yelp.com/biz/amber-wright-pet-sitting-raleigh-2?osq=Pet+Boarding',
-'https://www.yelp.com/biz/kimies-kritters-hillsborough?osq=Pet+Boarding',
-'https://www.yelp.com/biz/pets-companion-inn-durham-bahama?osq=Pet+Boarding',
-'https://www.yelp.com/biz/k9-r-and-r-pet-retreat-rougemont-2?osq=Pet+Boarding',
-'https://www.yelp.com/biz/all-critters-petcare-raleigh?osq=Pet+Boarding',
-'https://www.yelp.com/biz/paws-claws-and-hooves-chapel-hill-2?osq=Pet+Boarding',
-'https://www.yelp.com/biz/bone-voyage-pet-resort-garner?osq=Pet+Boarding',
-'https://www.yelp.com/biz/pet-care-by-candace-raleigh?osq=Pet+Boarding'
+'https://www.yelp.com/biz/a-pets-life-augusta?osq=Pet+Boarding',
+'https://www.yelp.com/biz/d-tails-pet-grooming-augusta-2?osq=Pet+Boarding',
+'https://www.yelp.com/biz/elite-pet-service-of-augusta-augusta-3?osq=Pet+Boarding',
+'https://www.yelp.com/biz/hill-high-animal-hospital-augusta?osq=Pet+Boarding',
+'https://www.yelp.com/biz/barking-lot-boutique-evans-8?osq=Pet+Boarding',
+'https://www.yelp.com/biz/paws-in-paradise-resort-and-spa-evans?osq=Pet+Boarding',
+'https://www.yelp.com/biz/animal-house-augusta-5?osq=Pet+Boarding',
+'https://www.yelp.com/biz/starlings-camp-canine-appling?osq=Pet+Boarding',
+'https://www.yelp.com/biz/springwood-pet-boarding-and-grooming-hephzibah-3?osq=Pet+Boarding',
+'https://www.yelp.com/biz/st-francis-animal-hospital-augusta-2?osq=Pet+Boarding',
+'https://www.yelp.com/biz/paradise-animal-hospital-augusta-2?osq=Pet+Boarding',
+'https://www.yelp.com/biz/all-gods-creatures-veterinary-hospital-augusta?osq=Pet+Boarding',
+'https://www.yelp.com/biz/blue-willow-pet-and-home-services-augusta?osq=Pet+Boarding',
+'https://www.yelp.com/biz/dawg-tired-augusta-augusta?osq=Pet+Boarding',
+'https://www.yelp.com/biz/paradise-kennels-augusta?osq=Pet+Boarding',
+'https://www.yelp.com/biz/animal-boutique-martinez-3?osq=Pet+Boarding',
+'https://www.yelp.com/biz/pawwd-pets-are-what-we-do-grovetown-2?osq=Pet+Boarding',
+'https://www.yelp.com/biz/a-pets-and-plants-evans-4?osq=Pet+Boarding',
+'https://www.yelp.com/biz/highland-animal-hospital-augusta?osq=Pet+Boarding',
+'https://www.yelp.com/biz/acute-care-veterinary-clinic-augusta?osq=Pet+Boarding',
+'https://www.yelp.com/biz/ol-red-kennels-waynesboro?osq=Pet+Boarding',
+'https://www.yelp.com/biz/head-to-tail-small-dog-groom-and-board-warrenville?osq=Pet+Boarding',
+'https://www.yelp.com/biz/denegar-kennels-and-pet-pickup-service-aiken-2?osq=Pet+Boarding',
+'https://www.yelp.com/biz/the-animal-house-augusta-4?osq=Pet+Boarding',
+'https://www.yelp.com/biz/the-dog-mom-evans-3?osq=Pet+Boarding',
+'https://www.yelp.com/biz/floyds-good-dog-kennels-grovetown?osq=Pet+Boarding',
+'https://www.yelp.com/biz/boarding-and-grooming-at-ivy-falls-grovetown?osq=Pet+Boarding',
+'https://www.yelp.com/biz/north-augusta-animal-hospital-north-augusta?osq=Pet+Boarding',
+'https://www.yelp.com/biz/tender-love-and-pet-care-columbus-2?osq=Pet+Boarding',
+'https://www.yelp.com/biz/rockstar-paws-pet-grooming-and-boarding-columbus?osq=Pet+Boarding',
+'https://www.yelp.com/biz/northridge-veterinary-center-columbus?osq=Pet+Boarding',
+'https://www.yelp.com/biz/2nd-home-pet-resort-columbus?osq=Pet+Boarding',
+'https://www.yelp.com/biz/northside-animal-hospital-columbus?osq=Pet+Boarding',
+'https://www.yelp.com/biz/yuppy-puppy-grooming-and-boarding-columbus?osq=Pet+Boarding',
+'https://www.yelp.com/biz/paws-kountry-smiths-station?osq=Pet+Boarding',
+'https://www.yelp.com/biz/2nd-avenue-animal-hospital-columbus?osq=Pet+Boarding',
+'https://www.yelp.com/biz/lee-lees-world-columbus-3?osq=Pet+Boarding',
+'https://www.yelp.com/biz/dog-gone-good-dog-training-columbus?osq=Pet+Boarding',
+'https://www.yelp.com/biz/pups-at-tiffanys-as-the-dog-house-columbus?osq=Pet+Boarding',
+'https://www.yelp.com/biz/companion-animal-hospital-phenix-city?osq=Pet+Boarding',
+'https://www.yelp.com/biz/northridge-veterinary-center-columbus-3?osq=Pet+Boarding',
+'https://www.yelp.com/biz/the-dog-coach-opelika?osq=Pet+Boarding',
+'https://www.yelp.com/biz/smiths-station-animal-hospital-smiths-station-2?osq=Pet+Boarding',
+'https://www.yelp.com/biz/pawsitively-purrfect-grooming-salon-and-pet-spa-valley?osq=Pet+Boarding'
 )
 for company in companys:
 	time.sleep(2)
@@ -114,14 +138,9 @@ for company in companys:
 	except:
 		features = 'N/A'
 	col9.append(features)
-	#row = f"Title: {title};,website: {website};,phone: {phone};,address: {address};,city_state: {city_state};,owner: {owner};,rating: {rating};,rating_count: {rating_count};,features: {features}"
-	#rows.append(row)
 	print(f"Completed: {title}")
 	driver.quit()
-	
-#for data in rows:
-#    print(data)
-    
+   
 data = {'title':  col1,
         'website': col2,
         'phone': col3,
@@ -134,6 +153,6 @@ data = {'title':  col1,
         }
 
 df = pd.DataFrame (data, columns = ['title','website','phone','address','city_state','owner','rating','rating_count','features'])
-df.to_csv (r'export_yelp_data.csv', index = False, header=True)
+df.to_csv (r'export_yelp_lastbatch.csv', index = False, header=True)
 
 print (df)
