@@ -5,7 +5,6 @@ import pandas as pd
 import csv
 import os
 
-
 options = Options()
 options.headless = True
 options.add_argument("--no-sandbox")
