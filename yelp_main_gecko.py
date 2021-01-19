@@ -3,9 +3,6 @@ import time
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.keys import Keys
 import pandas as pd
-import csv
-import os
-
 
 options = Options()
 #options.headless = True
