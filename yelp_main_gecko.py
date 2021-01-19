@@ -19,7 +19,6 @@ col7 =[]
 col8 =[]
 col9 =[]
 col10 =[]
-csv_input = []
 
 df = pd.read_csv('yelp_main_import_data.csv', header=0)
 company_names = df.company_name.to_list()
