@@ -1,4 +1,5 @@
-URL = 'https://www.yelp.com/search?find_desc=pet%20boarding&find_loc=Mobile%2C%20AL'
+#URL = 'https://www.yelp.com/search?find_desc=pet%20boarding&find_loc=Mobile%2C%20AL'
+URL = input("Enter Yelp Search URL: ")
 
 from selenium import webdriver
 import time
@@ -143,7 +144,10 @@ def main_sequence():
 		try:
 			features = driver.find_element_by_xpath('//div/div[3]/div[1]/div[1]/div/div/span[2]').text
 		except:
-			features = 'N/A'
+			try:
+				features = driver.find_element_by_xpath('//*[@id="wrap"]//div/div/span[2]').text
+			except:
+				features = 'N/A'
 		col9.append(features)
 		print(f"{len(col10)} : {title}")
 	driver.quit()
