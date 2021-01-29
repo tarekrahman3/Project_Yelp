@@ -145,7 +145,7 @@ def main_sequence():
 			features = driver.find_element_by_xpath('//div/div[3]/div[1]/div[1]/div/div/span[2]').text
 		except:
 			try:
-				features = driver.find_element_by_xpath('//*[@id="wrap"]//div/div/span[2]').text
+				features = driver.find_element_by_xpath('//*[@id="wrap"]/div[3]/yelp-react-root/div/div[2]/div[1]/div[1]/div/div/span[2]/span[1]').text
 			except:
 				features = 'N/A'
 		col9.append(features)
